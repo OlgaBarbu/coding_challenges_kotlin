@@ -4,7 +4,7 @@
  */
 
 fun main(args: Array<String>) {
-    for(x in 1..10){
+    for(x in 1..365){
         println("$x")
     }
 }

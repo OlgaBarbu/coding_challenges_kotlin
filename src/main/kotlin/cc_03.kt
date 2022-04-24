@@ -5,4 +5,12 @@
 
 fun main(args: Array<String>) {
 
+    println("Please give your Message in: ")
+
+    var input = readLine()
+
+    if(input is String ) {
+        print(input.uppercase())
+    }
+
 }
