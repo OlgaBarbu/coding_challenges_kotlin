@@ -1,3 +1,5 @@
+import java.util.*
+
 /*
     Coding Challenge #14
     Have the function factorial(num) take the num parameter being passed and return the factorial of it.
@@ -7,5 +9,19 @@
  */
 
 fun main(args: Array<String>) {
+    factorial(1..18)
 
+} fun factorial(num: IntRange) {
+    var factOfNum: Long = 1
+
+    var s = Scanner(System.`in`)
+    print("Give in your number:")
+    var num1 = s.nextInt()
+
+    for ( i in 1..num1)
+
+        // factorial of number equals factorial * i
+
+      factOfNum *= i
+        println(factOfNum)
 }

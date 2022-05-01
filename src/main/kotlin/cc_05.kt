@@ -11,26 +11,31 @@ import kotlin.random.Random
     Must contain at least one special character from !”§$%&/?
 
  */
- class PassGenerator
+
 fun main(args: Array<String>) {
 
-    generatePassword()
+   getFulLengthPassword()
 }
+
 fun generatePassword() {
-    val specialChar = "!/”§\$%&/?"
 
-    val charachtersUp = ('A'..'Z').random()
-    val charachtersSmall= ('a'..'z').random()
-    val randomNumber = ('1'..'9').random()
-    val randomChar = specialChar.random()
-
-    val passCharSequence = listOf<Char>(charachtersUp, charachtersSmall,randomNumber,randomChar)
+    val specialRandomChar = "!/”§\$%&/?".random()
+    val randomCharachtersUp = ('A'..'Z').random()
+    val randomCharachtersSmall = ('a'..'z').random()
+    val randomNumber = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9).random()
 
 
+    var passCharSequence = listOf(randomCharachtersUp,randomCharachtersSmall,randomNumber,specialRandomChar)
+    var passChar = passCharSequence
 
-  print( passCharSequence.shuffled() + passCharSequence.shuffled())
+    for (i in passCharSequence ) {
+        print("$i")
 
-
+    }
+}
+fun getFulLengthPassword() {
+    generatePassword()
+    generatePassword()
 
 
 

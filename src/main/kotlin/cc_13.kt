@@ -1,3 +1,9 @@
+import java.util.*
+import java.util.concurrent.TimeUnit
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.minutes
+
+
 /*
     Coding Challenge #13
     Have the function time_convert(minutes) take the minutes parameter being passed
@@ -8,4 +14,22 @@
 
 fun main(args: Array<String>) {
 
+    time_convert()
+
+} fun time_convert(){
+
+    val s = Scanner(System.`in`)
+    print("Number of minutes: ")
+    var givenTime: Int = s.nextInt()
+
+    var hours = givenTime / 60
+    var minutes = givenTime % 60
+
+
+
+    println("$givenTime Given Time  = $hours : $minutes")
+
 }
+
+
+

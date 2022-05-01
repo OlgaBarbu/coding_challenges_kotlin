@@ -18,6 +18,4 @@ fun main(args: Array<String>) {
             println("$num is even")
         else   println("$num is odd")
 
-
-
 }
