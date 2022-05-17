@@ -13,5 +13,34 @@ import java.util.*
 
 fun main(args: Array<String>) {
 
+    longest_word()
 
+}fun longest_word() {
+
+    println("Write something here:")
+    var enteredSen = readLine()
+    println("Your input :$enteredSen")
+    val delimiter1 = " "
+    val delimiter2 = ","
+    val delimiter3 = "."
+    val delimiter4 = "?"
+    val delimiter5 = "!"
+
+    var enteredSenSplit =
+        enteredSen?.split( delimiter1, delimiter2, delimiter3, delimiter4, delimiter5, ignoreCase = true)
+
+        var maxLength= ""
+
+    if (enteredSenSplit != null) {
+        for( i in 0 until enteredSenSplit.count()){
+           var maxLen2 = enteredSenSplit[i]
+
+            if(maxLen2.length > maxLength.length) {
+                maxLength = maxLen2
+
+            }
+        }
+    }
+    println("The longest word is : $maxLength with the lenght of: ${maxLength.length} letters")
 }
+

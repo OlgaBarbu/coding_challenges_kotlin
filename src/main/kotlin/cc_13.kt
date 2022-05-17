@@ -25,9 +25,11 @@ fun main(args: Array<String>) {
     var hours = givenTime / 60
     var minutes = givenTime % 60
 
+    // Returns the given number of minutes in format h:mm
+     if( minutes < 10) {
+            println("$givenTime Given Time = $hours:" + "0" + "$minutes")
 
-
-    println("$givenTime Given Time  = $hours : $minutes")
+     }else println("$givenTime Given Time  = $hours:$minutes")
 
 }
 
