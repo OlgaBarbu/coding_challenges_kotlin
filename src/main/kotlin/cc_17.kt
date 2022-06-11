@@ -13,17 +13,17 @@ import java.util.*
     For example: if num is 3524 your program should return 3 because of the following steps: (1) 5432 – 2345 = 3087, (2) 8730 – 0378 = 8352, (3) 8532 – 2358 = 6174.
 
  */
-
 fun main(args: Array<String>) {
 
     val s = Scanner(System.`in`)
 
     print("Type a four digit number: ")
-    val enteredString = s.nextInt()
+    val enteredNumber = s.nextInt()
 
-    kaprekarsConstant(enteredString,0)
+    kaprekarsConstant(enteredNumber, 0)
 
-} fun kaprekarsConstant(num : Int, c: Int): Int {
+}
+fun kaprekarsConstant(num: Int, c: Int): Int {
     //Declaring variable to store iteration count, ascending and descending & initializing them to c, 0
     var count = c
     var asc = 0
@@ -33,38 +33,45 @@ fun main(args: Array<String>) {
 
     val array = IntArray(4)
 
-    if(  num <= 999 || num >=10000 ){  //Throws exception if the input number is not a four digit lenght
-         throw java.lang.Exception("That's not a four digit number, it should look like this: 1234, 4567, 7890, 0156.")
+    if (num <= 999 || num >= 10000) {  //Throws exception if the input number is not a four digit lenght
+        throw java.lang.Exception("That's not a four digit number, it should look like this: 1234, 4567, 7890, 0156.")
     }
     // Storing array of digits in inverse order.
-   for(i in 0..3) {
+    for (i in 0..3) {
 
         array[i] = newNum % 10
 
-        newNum = newNum /10
-   }
+        newNum = newNum / 10
+    }
     // Sorting array, and storing it in ascending order and descending order.
-     array.sort()
+    array.sort()
 
-    for( j in 0..3) {
+    for (j in 0..3) {
 
         asc = asc * 10 + array[j]
     }
-    for (x in 3 downTo 0){
+    for (x in 3 downTo 0) {
         desc = desc * 10 + array[x]
     }
 
     // Returns difference between numbers formed by descending and ascending order.
     val diff = desc - asc
 
-     if( diff == num) {
+    if (diff == num) {
 
         print("And Kaprekar's constant $num has been reached \n")
         // returning count of iterations when the constant is reached
         print("The number of times the routine repeated: $count")
         return diff
     }
-    println("The difference between the biggest number $desc and smallest ${String.format("%04d",asc)} number is equal to: $diff")
+    println(
+        "The difference between the biggest number $desc and smallest number ${
+            String.format(
+                "%04d",
+                asc
+            )
+        } is equal to: $diff"
+    )
     //Repeating until value reaches Kaprekar's constant.
     count++
 
