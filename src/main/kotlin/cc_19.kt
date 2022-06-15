@@ -10,5 +10,29 @@
  */
 
 fun main(args: Array<String>) {
+    var exp = "arrb6???4xxbl5???eee5"
+    var expSomeMore = "arfvb3???7fred4??7"
+    println(questionMarks(exp))
+    println(questionMarks(expSomeMore))
+}
 
+fun questionMarks(str: String): Boolean {
+    var matchFound = false
+    var counter = 0
+    var secondNum = -1
+
+    for(char in str )
+    {
+        if(char.isDigit() ) {
+            val firstNumber = Integer.parseInt(char.toString())
+            val sum = firstNumber + secondNum
+            secondNum = firstNumber
+            if( sum != 10) {
+                counter = 0
+            }
+            matchFound = counter == 3
+        } else if  (char == '?')
+            counter++
+    }
+    return matchFound
 }
