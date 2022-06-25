@@ -13,30 +13,24 @@ import kotlin.random.Random
  */
 
 fun main(args: Array<String>) {
+    println(generatePassword(8))
 
-   getFulLengthPassword()
 }
 
-fun generatePassword() {
+fun generatePassword(len: Int): String {
 
-    val specialRandomChar = "!/”§\$%&/?".random()
-    val randomCharachtersUp = ('A'..'Z').random()
-    val randomCharachtersSmall = ('a'..'z').random()
-    val randomNumber = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9).random()
+    val passChar = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~`!@#$%^&*()-_=+[{]}|;:',<.>/?\""
 
+    val random = Random(System.nanoTime())
+    val password = StringBuilder()
 
-    var passCharSequence = listOf(randomCharachtersUp,randomCharachtersSmall,randomNumber,specialRandomChar)
-    var passChar = passCharSequence
-
-    for (i in passCharSequence ) {
-        print("$i")
-
+    for (i in 0 until len) {
+        val randomChar = random.nextInt(passChar.length)
+        password.append(passChar[randomChar])
     }
+
+
+    return password.toString()
 }
-fun getFulLengthPassword() {
-    generatePassword()
-    generatePassword()
 
 
-
-}
